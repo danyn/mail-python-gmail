@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#import smtplib for sending the email ie. run an email server
+#import smtplib for sending the email ie. Connect as a client to a email server
 import smtplib
 
 #import any email modules needed to construct headers and format the email itself
