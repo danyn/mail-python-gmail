@@ -7,12 +7,13 @@ import threading
 from socketserver import ThreadingMixIn
 import json
 import ssl
+import mailClient
 
 #import smtplib for sending the email ie.  Connect as a client to a email server
-import smtplib
+# import smtplib
 
 #import any email modules needed to construct headers and format the email itself
-from email.mime.text import MIMEText
+# from email.mime.text import MIMEText
 
 
 # Instanstiate a thread ready server for processing request when ready
@@ -46,7 +47,8 @@ class EmailResponder(http.server.BaseHTTPRequestHandler):
             json_response = json.dumps({'email_address': email_address,'first_name':first_name, 'last_name':last_name})
             self.wfile.write(bytes(json_response, 'utf-8'))
             print(first_name)
-
+            mailClient.send(first_name, last_name, email_address, telephone_number)
+            
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT',8000))
