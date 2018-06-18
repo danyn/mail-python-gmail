@@ -32,7 +32,7 @@ def send(first_name, last_name, email_address, telephone_number):
 
     #manage a connection to a mail server then send the email - finally time to use smtplib
     server_usernamae = 'a.service.signup@gmail.com'
-    server_password = ';;;p;;;_Pearl_'
+    server_password = ''
 
 
 
